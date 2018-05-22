@@ -1,0 +1,11 @@
+body { 
+    background-image: url(/static/img/background.jpg);
+    background-position: left top;
+    background-repeat: repeat;
+}
+.trollface {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 5%;
+}

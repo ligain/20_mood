@@ -1,6 +1,15 @@
+
 # Site for the Mood
 
-[TODO. There will be project description]
+Yet another simple simple site with funny jokes in Russian.
+To run it locally:
+```bash
+$ git clone https://github.com/ligain/20_mood.git
+$ cd 20_mood/
+$ python3 -m http.server
+```
+then open http://127.0.0.1:8000/ in browser.
+
 
 # Project Goals
 
