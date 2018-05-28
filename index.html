@@ -3,18 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Настроение</title>
-  <script src="./static/js/phrases.js"></script>
+  <script id="quotes_json" type="application/json">
+    [
+      {
+        "phrase": "Кукурузные хлопья - теперь без асбеста!",
+        "signature": "©Неизвестный маркетолог"
+      },
+      {
+        "phrase": "Собираюсь жить вечно, пока всё идёт нормально"
+      },
+      {
+        "phrase": "Вывеска над кафе — '\u003cМы открылись\u003e'. Что-то не так. Где же '\u003c/Мы открылись\u003e'?"
+      },
+      {
+        "phrase": "Если ты будешь усердно работать по 8 часов в день, то обязательно станешь боссом и начнешь работать по 12"
+      }
+    ]
+  </script>
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
 <body>
-  <div class="container">
+  <div class="container phrase-container">
     <div class="jumbotron mt-3">
       <h1 id="phrase"></h1>
       <p class="lead" id="signature"></p>
     </div>
   </div>
   <img src="./static/img/Trollface.svg" class="trollface" alt="Trollface">
-<script src="./static/js/main.js"></script>
+<script>
+  var phrases = JSON.parse(document.getElementById('quotes_json').innerHTML);
+  var randomIndex = Math.floor(Math.random()*phrases.length);
+  var randomPhrase = phrases[randomIndex];
+
+  document.getElementById('phrase').textContent = randomPhrase['phrase'];
+  if (randomPhrase.hasOwnProperty('signature')) {
+      document.getElementById('signature').textContent = randomPhrase['signature'];
+  }
+</script>
 </body>
 </html>
